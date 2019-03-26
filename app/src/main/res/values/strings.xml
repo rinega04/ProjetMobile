@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="todo">TODO</string>
+    <string name="pokedex">POKEDEX</string>
+    <string name="nompoke">NomPoke</string>
+    <string name="url">URL</string>
+</resources>
