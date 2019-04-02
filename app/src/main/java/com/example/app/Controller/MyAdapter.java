@@ -1,5 +1,6 @@
 package com.example.app.Controller;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.app.Model.Pokemon;
 import com.example.app.R;
 
@@ -15,6 +17,7 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Pokemon> values;
+    Context context;
 
     private final OnItemClickListener listener;
 
@@ -45,10 +48,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     // Provide a suitable constructor (depends on the kind of dataset)
 
-    public MyAdapter(List<Pokemon> values, AdapterView.OnItemClickListener listener) {
+    public MyAdapter(List<Pokemon> values, AdapterView.OnItemClickListener listener, Context context) {
         this.values = values;
         this.listener = (OnItemClickListener) listener;
-
+        this.context = context;
     }
 
 
@@ -78,6 +81,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         });
 
         holder.txtHeader.setText(pokemon.getName());
+
+        String[] values = pokemon.getUrl().split("/");
+
+        Glide.with(context)
+                .load("https://www.pokebip.com/pokedex-images/artworks/"+values[values.length - 1]+".png")
+                .into(holder.img);
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)

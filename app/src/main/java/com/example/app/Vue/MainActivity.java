@@ -1,6 +1,6 @@
 package com.example.app.Vue;
 
-import android.animation.LayoutTransition;
+
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
