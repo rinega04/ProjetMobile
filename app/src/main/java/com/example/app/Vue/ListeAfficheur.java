@@ -81,8 +81,10 @@ public class ListeAfficheur extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
-        mAdapter = new MyAdapter(list, getListener());
+        mAdapter = new MyAdapter(list, getListener(), this);
         recyclerView.setAdapter(mAdapter);
+
+        Log.d("AH OK", Integer.toString(list.size()));
     }
 
     private MyAdapter.OnItemClickListener getListener() {
