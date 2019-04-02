@@ -29,6 +29,8 @@ public class AttributAfficheur extends AppCompatActivity {
             Pokemon attr = gson.fromJson(sessionId, Pokemon.class);
             txt.setText(Constants.fromHtml(attr.getName()));
             attri.setText(Constants.fromHtml((attr.getUrl())));
+            overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
+
 
         }
     }

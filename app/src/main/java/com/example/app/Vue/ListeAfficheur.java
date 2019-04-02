@@ -33,6 +33,12 @@ public class ListeAfficheur extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_to_left, R.anim.slide_to_right);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_afficheur);
@@ -93,6 +99,7 @@ public class ListeAfficheur extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), AttributAfficheur.class);
                 intent.putExtra(Constants.KEY, gson.toJson(item));
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_down, R.anim.slide_up);
             }
 
         };
