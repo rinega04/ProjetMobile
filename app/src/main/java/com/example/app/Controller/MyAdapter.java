@@ -30,7 +30,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         public TextView txtHeader;
         public ImageView img;
         public View layout;
@@ -44,16 +43,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     }
 
-
-
-    // Provide a suitable constructor (depends on the kind of dataset)
-
     public MyAdapter(List<Pokemon> values, AdapterView.OnItemClickListener listener, Context context) {
         this.values = values;
         this.listener = (OnItemClickListener) listener;
         this.context = context;
     }
-
 
     // Create new views (invoked by the layout manager)
     @Override
@@ -63,10 +57,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         View v = inflater.inflate(R.layout.row_layout, parent, false);
         // set the view's size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(v);
-
         return vh;
     }
-
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
@@ -79,7 +71,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 listener.onItemClick(pokemon);
             }
         });
-
         holder.txtHeader.setText(pokemon.getName());
 
         String[] values = pokemon.getUrl().split("/");
@@ -87,7 +78,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Glide.with(context)
                 .load("https://www.pokebip.com/pokedex-images/artworks/"+values[values.length - 1]+".png")
                 .into(holder.img);
-
     }
 
     // Return the size of your dataset (invoked by the layout manager)

@@ -10,7 +10,4 @@ public interface APIRest {
     //Call<RestPokemonResponse>
     @GET("pokemon?offset=0&limit=964")
     Call<RestPokemon> getListPokemon();
-
-    @GET("abilities")
-    Call<RestPokemon> getListAbilities();
 }

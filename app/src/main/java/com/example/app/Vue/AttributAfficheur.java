@@ -24,22 +24,21 @@ public class AttributAfficheur extends AppCompatActivity {
             setContentView(R.layout.activity_attribut_afficheur);
 
             txt = findViewById(R.id.nompoke);
-            attri = findViewById(R.id.attripoke);
-            img = findViewById(R.id.imageView);
+            img = findViewById(R.id.pokeimg);
 
             Gson gson = new Gson();
 
             String sessionId= getIntent().getStringExtra(Constants.KEY);
             Pokemon attr = gson.fromJson(sessionId, Pokemon.class);
             txt.setText(Constants.fromHtml(attr.getName()));
-            //attri.setText(Constants.fromHtml((attr.getUrl())));
 
+            /* permet de récuperer les image d'un site pour chacun des 964 (environ) pokemon*/
             String[] values = attr.getUrl().split("/");
-
             Glide.with(getApplicationContext())
                     .load("https://www.pokebip.com/pokedex-images/artworks/"+values[values.length - 1]+".png")
                     .into(img);
 
+            /*animation entre les activity*/
             overridePendingTransition(R.anim.slide_up, R.anim.slide_down);
 
 
