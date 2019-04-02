@@ -4,4 +4,5 @@
     <string name="pokedex">POKEDEX</string>
     <string name="nompoke">NomPoke</string>
     <string name="url">URL</string>
+    <string name="descrippoke">descrippoke</string>
 </resources>

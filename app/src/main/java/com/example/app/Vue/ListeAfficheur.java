@@ -57,7 +57,6 @@ public class ListeAfficheur extends AppCompatActivity {
                 List<Pokemon> listPokemon = restPokemon.getResults();
                 showList(listPokemon);
             }
-
             @Override
             public void onFailure(Call<RestPokemon> call, Throwable t) {
                 Log.d("Erreur", "API KO");
@@ -83,6 +82,7 @@ public class ListeAfficheur extends AppCompatActivity {
     private MyAdapter.OnItemClickListener getListener() {
         return new MyAdapter.OnItemClickListener() {
 
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -90,11 +90,11 @@ public class ListeAfficheur extends AppCompatActivity {
 
             public void onItemClick(Pokemon item) {
                 Gson gson = new Gson();
-
                 Intent intent = new Intent(getBaseContext(), AttributAfficheur.class);
                 intent.putExtra(Constants.KEY, gson.toJson(item));
                 startActivity(intent);
             }
+
         };
     }
 }

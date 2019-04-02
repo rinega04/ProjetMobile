@@ -15,11 +15,13 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Pokemon> values;
+
     private final OnItemClickListener listener;
 
     public interface OnItemClickListener extends AdapterView.OnItemClickListener {
         void onItemClick(Pokemon item);
     }
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -46,7 +48,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public MyAdapter(List<Pokemon> values, AdapterView.OnItemClickListener listener) {
         this.values = values;
         this.listener = (OnItemClickListener) listener;
+
     }
+
 
     // Create new views (invoked by the layout manager)
     @Override
