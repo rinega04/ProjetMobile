@@ -36,13 +36,13 @@ Cette application affiche le pokédex du jeu pokémon et utilise une API.
 
 - Page d'acceuil, appuyer sur la pokéball pour accéder à la liste.
 
-<img src="/app/src/main/res/imagereadme/pageacceuil.PNG">
+<img src="/app/src/main/res/imagereadme/pageacceuil.PNG" width="247" height="512">
 
 ### Liste de Pokémon
 
 - Affichage de la liste de pokémon, cliqué sur l'un des éléments de la liste pour accéder à l'écran suivant
 
-<img src="/app/src/main/res/imagereadme/listedepokemon.PNG">
+<img src="/app/src/main/res/imagereadme/listedepokemon.PNG" width="247" height="512">
 
 ### Affichage des Attributs
 
