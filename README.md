@@ -48,5 +48,5 @@ Cette application affiche le pokédex du jeu pokémon et utilise une API.
 
 - Affiche le nom et l'apparence du pokémon
 
-<img src="img_readme/pokemonavecnom.PNG"> <img src="img_readme/pokeavecnom1.PNG"> 
+<img src="/app/src/main/res/imagereadme/pokemonavecnom.PNG" width="247" height="512"> <img src="/app/src/main/res/imagereadme/pokeavecnom1.PNG" width="247" height="512"> 
 
